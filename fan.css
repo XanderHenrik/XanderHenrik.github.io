@@ -1,0 +1,93 @@
+/* Main layout styles */
+/* -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    
+}
+
+/* TODO: fix an actual dark mode, everyone wants to see it */
+dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body {
+    padding: min(10em, 8%);
+    font-size: 1.5rem;
+    width: 100vw;
+    height: max(100vh, 100%);
+    /* height: 100dvh; */
+    background-image: linear-gradient(175deg,
+        #ffffff 40%,
+        #ffff65 40%, #ffff65 75%,
+        #71ffde 75%, #71ffde 90%,
+        #3799ee 90%);
+}
+
+.scroll-box {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    /* width: calc(50% - 3em); */
+    width: 300px;
+    gap: 20px;
+    border-radius: 1em;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em;
+    /* width: calc(50% - 3em); */
+    align-content: center;
+    justify-content: center;
+}
+
+.glass-card {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    background: rgba(157, 155, 155, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* border: #a9a9a9 1px solid; */
+    width: 300px;
+    gap: 1em;
+    padding: 1em 1,2em;
+}
+
+
+/* Content styles */
+/* -------------------------------------------------------------------------- */
+h1 {
+    font-size: clamp(1.8rem, calc(7vw + 1rem), 3.5rem);
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: clamp(1.2rem, calc(4vw + 0.5rem), 1.5rem);
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: clamp(1rem, calc(3vw + 0.5rem), 1.2rem);
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+image {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    /* aspect-ratio: 16 / 9;  for landscape images */
+    /* aspect-ratio: 9 / 16;  for portrait images */
+    object-fit: cover;
+}
+

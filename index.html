@@ -2,35 +2,72 @@
 <html lang="en">
 
 <head>
-<link rel="stylesheet" href+styles.css/>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>X15 - Landingzone</title>
 
+<link rel="stylesheet" href="fan.css"/>
+
 </head>
 
 <body>
-    <h1>X-15</h1>
+    <div class="site-header">
+        <h1>X-15</h1>
+        <hr>
+        <nav class="navbar">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./pages/travels.html">Travels</a></li>
+            <li><a href="./pages/gallery.html">Photos</a></li>
+        </nav>
+    </div>
     <hr>
-    <nav>
-        <li><a href="./">Home</a></li>
-        <li><a href="./pages/travels.html">Travels</a></li>
-        <li><a href="./pages/gallery.html">Photos</a></li>
-    </nav>
-    <p>
-        This is a work in progress, to be continued...
-    </p>
+    <div class="welcome-content">
+        <p>
+            This is a work in progress, to be continued...
+        </p>
+
+
+        <p>Click button below to display hidden content from the tempplate element</p>
+        <button> onclick="alertButton()"</button>
+        
+        <p>
+            Now we really need to fill up the space to make the background fit the
+            page better.
+        </p>
+        
+        <hr>
+        <!-- <p>
+            <h2>Mark being made</h2>
+            <img src="./images/1st_rendition_logo.png" width="214" height="204">
+        </p> -->
+    </div>
+    <div> <!-- class="cards">-->
+
+        <div class="scroll-box">
+            <div class="glass-card">
+                <h3>Current projects</h3>
+                <p>This is the first card.</p>
+            </div>
+
+            <div class="glass-card">
+                <h3>Current projects</h3>
+                <p>This is the first card.</p>
+            </div>
+            <div class="glass-card">
+                <h3>Card 2</h3>
+                <p>This is the second card.</p>
+            </div>
+        </div>
+        
+    </div>
 
     <hr>
 
-    <p>Click button below to display hidden content from the tempplate element</p>
-    <button> onclick="alertButton()"</button>
-
-    <template>
-        <h2>Mark being made</h2>
-        <img src="./images/1st_rendition_logo.png" width="214" height="204">
-    </template>
+    <div class="site-footer">
+        <p>© 2023 Xander</p>
+        <p>Eventually made by Xander Noordeloos</p>
+        <p>links etc.</p>
+    </div>
 </body>
 
 <script src="app.js"></script>
