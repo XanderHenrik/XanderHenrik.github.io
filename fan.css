@@ -6,7 +6,8 @@
 *::after {
     box-sizing: border-box;
     font-family: 'Montserrat';
-    
+    /* theme-color: dark light; */
+    /* overflow: 80%; */
 }
 
 /* TODO: fix an actual dark mode, everyone wants to see it */
@@ -21,11 +22,11 @@ body {
     width: 100vw;
     height: max(100vh, 100%);
     /* height: 100dvh; */
-    background-image: linear-gradient(175deg,
-        #ffeec7 40%,
-        #ffff65 40%, #ffff65 75%,
-        #71ffde 75%, #71ffde 90%,
-        #3799ee 90%);
+    background-image: linear-gradient(176deg,
+        #f7ebcd 40%,
+        #fdfda7 40%, #fdfda7 75%,
+        #b6ffee 75%, #b6ffee 90%,
+        #4890cf 90%);
 }
 
 .scroll-box {
@@ -33,7 +34,7 @@ body {
     grid-template-columns: 1fr 1fr; */
     display: flex;
     /* width: calc(50% - 3em); */
-    width: 300px;
+    width: 750px;
     gap: 20px;
     border-radius: 1em;
     overflow-x: scroll;
@@ -41,8 +42,8 @@ body {
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    /* grid-template-columns: 1fr 1fr; */
     padding: 1em;
     /* width: calc(50% - 3em); */
     align-content: center;
@@ -52,13 +53,13 @@ body {
 .glass-card {
     scroll-snap-align: center;
     flex-shrink: 0;
-    background: rgba(157, 155, 155, 0.1);
+    background: rgba(199, 199, 199, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 1em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
     /* box-shadow: 0 -4px -8px rgba(248, 248, 248, 0.996); */
     border: #a9a9a9 1px solid;
-    width: 300px;
+    width: 750px;
     gap: 1em;
     padding: 1em 1.5em;
 }
@@ -67,7 +68,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1em;
-    padding: 1em;
+    padding: 1.5em;
     width: min(100%, 70rem);
     margin-inline: auto;
 }
@@ -87,6 +88,26 @@ body {
 
 /* Content styles */
 /* -------------------------------------------------------------------------- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    margin-bottom: 0;
+    /* backdrop-filter: blur(40px);
+    border-radius: 1em;
+    box-shadow: 0 4px 8px rgba(122, 121, 121, 0.451);
+    border: #a9a9a9 1px solid; */
+    z-index: 9999;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    font-size: 1.2rem;
+}
+
 h1 {
     font-size: clamp(1.8rem, calc(7vw + 1rem), 3.5rem);
     text-align: center;
