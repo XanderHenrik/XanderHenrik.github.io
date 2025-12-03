@@ -12,8 +12,17 @@
 
 /* TODO: fix an actual dark mode, everyone wants to see it */
 dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+    --color1: #121212;
+    --color2: #2779c2;
+    --color3: #8335c3;
+    --color4: #d936d6;
+    
+}
+light-mode {
+    --color1: #f7ebcd;
+    --color2: #fdfda7;
+    --color3: #b6ffee;
+    --color4: #4890cf;
 }
 
 body {
@@ -27,6 +36,10 @@ body {
         #fdfda7 40%, #fdfda7 75%,
         #b6ffee 75%, #b6ffee 90%,
         #4890cf 90%);
+        /* var(--color1) 40%,
+        var(--color2) 40%, var(--color2) 75%,
+        var(--color3) 75%, var(--color3) 90%,
+        var(--color4) 90%); */
 }
 
 .scroll-box {
@@ -93,6 +106,19 @@ body {
     grid-column: span 2;
 }
 
+.text-grid {
+    display: grid;
+    grid-template-columns: [max-start] 100px [wide-start] 100px [content-start] 1fr [content-end] 100px [wide-end] 100px [max-end];
+}
+
+.text-grid > * {
+    grid-column: content;
+}
+
+.text-grid.wide > * {
+    grid-column: wide;
+}
+
 
 /* Content styles */
 /* -------------------------------------------------------------------------- */
@@ -146,3 +172,7 @@ img {
     /* border: #000000 3px solid; */
 }
 
+
+.landscape-img {
+    aspect-ratio: 16 / 7.725;
+}
