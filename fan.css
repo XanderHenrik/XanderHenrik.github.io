@@ -75,6 +75,9 @@ body {
     display: block;
 }
 
+
+/* Fancy scroll box and glass cards */
+/* -------------------------------------------------------------------------- */
 .scroll-box {
     /* display: grid;
     grid-template-columns: 1fr 1fr; */
@@ -123,7 +126,7 @@ body {
     margin-inline: auto;
 }
 
-.foto-gallery > img{
+.foto-gallery > * {
     max-width: 100%;
     width: 100%;
     height: auto;
@@ -147,19 +150,51 @@ body {
 
 /* General content structure; main column, break-out and full-width */
 /* -------------------------------------------------------------------------- */
-.text-grid {
+.text-grid{
+    --grid-padding: 1rem;
+    --main-size: minmax(80%, 60ch);
+    --breakout-size: minmax(0, 20ch);
+    --max-width-size: minmax(0, 10ch);
+
+
     display: grid;
-    grid-template-columns: [max-start] 100px [wide-start] 100px [content-start] 1fr [content-end] 100px [wide-end] 100px [max-end];
+    grid-template-columns:
+        [max-width-start] var(--max-width-size) [breakout-start] var(--breakout-size) [main-start] var(--main-size) [main-end] var(--breakout-size) [breakout-end] var(--max-width-size) [max-width-end];
 }
 
 .text-grid > * {
-    grid-column: content;
+    grid-column: main;
 }
 
-.text-grid.wide > * {
-    grid-column: wide;
+.text-grid > .breakout {
+    grid-column: breakout;
 }
 
+.text-grid > .max-width{
+    grid-column: max-width;
+}
+
+
+/* Sub-grid; three columns */
+/* -------------------------------------------------------------------------- */
+.content-subgrid {
+    display: grid;
+    grid-template-columns: 1fr 10px repeat(2, 1fr);
+    height: auto;
+    gap: 0.5rem;
+    column-fill: balance;
+    column-rule: #121212 1px solid;
+}
+
+.content-subgrid > .vertical-line {
+         border-left:1px solid #38546d; 
+         border-right:1px solid #16222c; 
+         height:200px;
+         /* position:absolute; */
+         /* right:249px; */
+         /* top:10px; */
+         width: 1px;
+}
 
 /* Content styles */
 /* -------------------------------------------------------------------------- */
@@ -215,12 +250,13 @@ body {
 .site-logo {
     display: flex;
     align-items: center;
-    padding: 0 1em;
+    /* padding: 0 1em; */
 
     text-decoration: none;
     font-weight: bold;
     font-size: 2.5em;
     color: var(--text-color);
+    list-style: none;
 }
 
 /* General content styling */
@@ -239,10 +275,13 @@ h3 {
 
 p {
     font-size: clamp(1rem, calc(3vw + 0.5rem), 1.2rem);
-    text-align: center;
+    /* text-align: center; */
     margin-bottom: 1em;
 }
 
+/* hr {
+    border: var(--text-color) 1px solid;
+} */
 
 img {
     max-width: 100%;
