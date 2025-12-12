@@ -188,6 +188,7 @@ body {
     gap: 0.5rem;
     column-fill: balance;
     column-rule: #121212 1px solid;
+    row-gap: 5em;
 }
 
 .content-subgrid > .vertical-line {
