@@ -147,6 +147,10 @@ body {
     grid-column: span 2;
 }
 
+.across_3_cols {
+    grid-column: span 3;
+}
+
 
 /* General content structure; main column, break-out and full-width */
 /* -------------------------------------------------------------------------- */
@@ -179,7 +183,7 @@ body {
 /* -------------------------------------------------------------------------- */
 .content-subgrid {
     display: grid;
-    grid-template-columns: 1fr 10px repeat(2, 1fr);
+    grid-template-columns: 1fr 10px 1fr 10px 1fr;
     height: auto;
     gap: 0.5rem;
     column-fill: balance;
@@ -278,10 +282,6 @@ p {
     /* text-align: center; */
     margin-bottom: 1em;
 }
-
-/* hr {
-    border: var(--text-color) 1px solid;
-} */
 
 img {
     max-width: 100%;
