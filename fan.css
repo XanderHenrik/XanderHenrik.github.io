@@ -17,27 +17,36 @@
     --color3: #fdfda7;
     --color4: #b6ffee;
     --color5: #4890cf;
+    --transparant: rgba(199, 199, 199, 0);
 }
 
 body {
     color: var(--text-color);
-    padding: min(10em, 8%);
+    /* padding: min(10em, 8%); */
+    margin-top: 150px;
     font-size: 1.5rem;
-    width: 100vw;
-    height: max(100vh, 100%);
+    /* width: 100vw; */
+    /* height: max(100vh, 100%); */
     /* height: 100dvh; */
-    background-image: linear-gradient(176deg,
+    /* background-image: linear-gradient(176deg, */
         /* #f7ebcd 40%,
         #fdfda7 40%, #fdfda7 75%,
         #b6ffee 75%, #b6ffee 90%,
         #4890cf 90%); */
-        var(--color2) 40%,
+        /* var(--color2) 40%,
         var(--color3) 40%, var(--color3) 75%,
         var(--color4) 75%, var(--color4) 90%,
-        var(--color5) 90%);
+        var(--color5) 90%); */
+
+        /* Experimental background: */
+        background-color: var(--color2);
+        background-image: 
+        repeating-linear-gradient(178deg, var(--transparant), var(--transparant) 70%, var(--color5) 90%, var(--color5)),
+        repeating-linear-gradient(115deg, var(--transparant), var(--transparant) 50%, var(--color4) 75%, var(--color4)),
+        repeating-linear-gradient(93.5deg, var(--transparant), var(--transparant) 35%, var(--color3) 80%, var(--color3));
 }
 
-/* TODO: fix an actual dark mode, everyone wants to see it */
+/* Dark mode toggle */
 /* -------------------------------------------------------------------------- */
 .darkmode {
     --text-color: #ffffff;
@@ -155,9 +164,9 @@ body {
 /* General content structure; main column, break-out and full-width */
 /* -------------------------------------------------------------------------- */
 .text-grid{
-    --grid-padding: 1rem;
-    --main-size: minmax(80%, 60ch);
-    --breakout-size: minmax(0, 20ch);
+    /* --grid-padding: 1rem; */
+    --main-size: minmax(70%, 60ch);
+    --breakout-size: minmax(0, 50ch);
     --max-width-size: minmax(0, 10ch);
 
 
@@ -179,12 +188,13 @@ body {
 }
 
 
-/* Sub-grid; three columns */
+/* Sub-grid; Additional content grid featuring three columns */
 /* -------------------------------------------------------------------------- */
 .content-subgrid {
     display: grid;
     grid-template-columns: 1fr 10px 1fr 10px 1fr;
     height: auto;
+    width: auto;
     gap: 0.5rem;
     column-fill: balance;
     column-rule: #121212 1px solid;
@@ -194,7 +204,7 @@ body {
 .content-subgrid > .vertical-line {
          border-left:1px solid #38546d; 
          border-right:1px solid #16222c; 
-         height:200px;
+         height: auto;
          /* position:absolute; */
          /* right:249px; */
          /* top:10px; */
@@ -291,6 +301,7 @@ img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 0.5rem;
+    border: 0.5px solid var(--text-color);
 }
 
 
